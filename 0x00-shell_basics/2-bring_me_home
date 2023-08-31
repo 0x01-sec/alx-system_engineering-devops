@@ -1,0 +1,4 @@
+#!/bin/bash
+home_dir=$(grep "^$USER:" /etc/passwd | cut -d: -f6)
+cd "$home_dir"
+
