@@ -1,11 +1,2 @@
 #!/bin/bash
-
-# Get the current directory and its parent directory
-current_dir=$(pwd)
-parent_dir=$(dirname "$current_dir")
-for html_file in *.html; do
-    # Check if the file exists in the parent directory or is newer
-    if [ ! -e "$parent_dir/$html_file" ] || [ "$html_file" -nt "$parent_dir/$html_file" ]; then
-        cp "$html_file" "$parent_dir/"
-    fi
-done
+cp -u *.html ..
