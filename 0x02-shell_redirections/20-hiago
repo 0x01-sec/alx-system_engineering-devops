@@ -1,1 +1,10 @@
-tr -d cC
+#!/bin/bash
+
+
+while IFS= read -r line; do
+
+  cleaned_line=$(echo "$line" | tr -d 'cC')
+  
+  echo "$cleaned_line"
+done
+
