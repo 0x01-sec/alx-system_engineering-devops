@@ -1,3 +1,15 @@
 #!/bin/bash
-cut -c1 - | paste -sd ""
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 <file>"
+  exit 1
+fi
+
+while IFS= read -r line; do
+  first_char="${line:0:1}"
+  decoded_message="${decoded_message}${first_char}"
+done < "$1"
+
+echo -e "$decoded_message\n"
+
 
